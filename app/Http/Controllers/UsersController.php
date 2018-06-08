@@ -33,7 +33,7 @@ class UsersController extends Controller
         return view('users.show', $data);
          }
          
-         return redirect()->back();
+         return redirect('/');
        
     }    
 }
