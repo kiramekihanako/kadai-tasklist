@@ -110,9 +110,11 @@ class TasksController extends Controller
             'content' => 'required|max:191',]);
             
      $task = Task::find($id);
+      if (\Auth::user()->id === $task->user_id) {
      $task->status = $request->status;
 	$task->content = $request->content;
 	$task->save();
+      }
 
 	return redirect('/');
     }
